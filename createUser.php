@@ -11,9 +11,10 @@
 
 		if($mysqli->query($checkUser) == TRUE)
 		{
-		    echo "condition true.<br>";
+		    echo "Username exists.<br>";
 		} else {
-		    echo "condition false.<br>";
+		    $mysqli->query($createUser);
+			echo "User create success.<br>";
 		}
 
 
