@@ -7,8 +7,7 @@
 		printf("Connect failed: %s\n", $mysqli->connect_error);
 	} else {
 		$checkUser = "SELECT * FROM Users WHERE EXISTS (User_id = '$username')";
-		$createUser = "INSERT INTO Users (User_id)
-		VALUES ('$userName')";
+		$createUser = "INSERT INTO Users (User_id) VALUES ('$userName')";
 
 		if($mysqli->query($checkUser) === TRUE)
 		{
