@@ -9,7 +9,7 @@
 		$checkUser = "SELECT count( * ) FROM Users WHERE User_id = '$userName'";
 		$createUser = "INSERT INTO Users (User_id) VALUES ('$userName')";
 
-		if($mysqli->query($checkUser) == TRUE)
+		if($mysqli->query($checkUser) == 0)
 		{
 			$mysqli->query($createUser);
 			echo "User create success.<br>";
