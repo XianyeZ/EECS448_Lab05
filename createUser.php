@@ -9,15 +9,15 @@
 		$checkUser = "SELECT EXISTS(SELECT 1 FROM Users WHERE User_id = '$userName')";
 		$createUser = "INSERT INTO Users (User_id) VALUES ('$userName')";
 
-		$result = $mysqli->query($checkUser);
+		echo $mysqli->query($checkUser);
 
-		if($result == true)
-		{
-		    echo "Username exists.<br>";
-		} else {
-			$mysqli->query($createUser);
-			echo "User create success.<br>";
-		}
+		//if($result == true)
+	//	{
+	//	    echo "Username exists.<br>";
+	//	} else {
+	//		$mysqli->query($createUser);
+	//		echo "User create success.<br>";
+	//	}
 
 
 	}
