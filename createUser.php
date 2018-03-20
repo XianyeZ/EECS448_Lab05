@@ -11,7 +11,7 @@
 
 		$result = $mysqli->query($checkUser);
 
-		if($result == 1)
+		if($result == true)
 		{
 		    echo "Username exists.<br>";
 		} else {
