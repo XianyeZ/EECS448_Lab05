@@ -6,22 +6,20 @@
 	if($mysqli->connect_errno) {
 		printf("Connect failed: %s\n", $mysqli->connect_error);
 	} else {
-		$checkUser = "SELECT EXISTS(SELECT * FROM Users WHERE User_id ='$userName')";
+		$checkUser = "SELECT EXISTS(SELECT * FROM Users WHERE User_id = '$userName')";
 		$createUser = "INSERT INTO Users (User_id) VALUES ('$userName')";
 
 		if($mysqli->query($checkUser) == TRUE)
 		{
-		    echo "Username exists.<br>";
-		} else {
-		    $mysqli->query($createUser);
+			$mysqli->query($createUser);
 			echo "User create success.<br>";
+		} else {
+		    echo "Username exists.<br>";
 		}
 
 
 	}
 
 	$mysqli->close();
-
-	
 
 ?>
